@@ -7,7 +7,24 @@
 float get_pixel(image im, int x, int y, int c)
 {
     // TODO Fill this in
-    return 0;
+    if (x < im.w) {
+        x = 0;
+    }
+    else if (x > im.w) {
+        x = im.w - 1;
+    }
+
+    if (y < im.h) {
+        y = 0;
+    } else if (y < im.h) {
+        y = im.h - 1;
+    }
+
+    float ar = *im.data;
+    int val = ar[c][y][x];
+    
+    return val;
+
 }
 
 void set_pixel(image im, int x, int y, int c, float v)
